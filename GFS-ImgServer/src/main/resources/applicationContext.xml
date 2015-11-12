@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+ 		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+ 		http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+        
+        <mvc:annotation-driven />  
+         
+        <!-- 扫描bean -->
+   		 <context:component-scan base-package="com.gome.cloud.img"/> 
+   		 
+   		 
+   		 
+        <!-- 定义视图解析器 -->
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        	<property name="prefix" value="/"/>
+			<property name="suffix" value=".jsp"/>
+        </bean>
+        
+         <!-- 对静态资源文件的访问    
+	    <mvc:resources mapping="/images/**" location="/images/" cache-period="31556926"/>  
+	    <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/>  
+	    <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>
+	   -->  
+	   <context:property-placeholder location="classpath:*.properties"/>
+       	<!-- 多数据库支持 -->
+    	<import resource="dataBases.xml" />
+    	<!-- redis支持-->
+        <import resource="redisContext.xml" /> 
+	
+     <!-- 支持上传文件 -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/> 
+    
+    <!-- 对所有的请求拦截使用/** ,对某个模块下的请求拦截使用：/myPath/* -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <ref bean="URLInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+ 
+    <bean id="URLInterceptor"
+        class="com.gome.cloud.img.web.URLInterceptor">
+    </bean>
+    <!-- 异常统一处理 -->
+     <bean id="exceptionResolver" class="com.gome.cloud.img.web.ExceptionHandler"/>
+</beans>

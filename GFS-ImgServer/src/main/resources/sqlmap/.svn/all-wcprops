@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/gmfs/!svn/ver/276/branches/imgServer/src/main/resources/sqlmap
+END
+gomefs_del_record.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/gmfs/!svn/ver/51/branches/imgServer/src/main/resources/sqlmap/gomefs_del_record.xml
+END
+auth.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/gmfs/!svn/ver/51/branches/imgServer/src/main/resources/sqlmap/auth.xml
+END
+file_name_map.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/gmfs/!svn/ver/276/branches/imgServer/src/main/resources/sqlmap/file_name_map.xml
+END
+business_config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/gmfs/!svn/ver/276/branches/imgServer/src/main/resources/sqlmap/business_config.xml
+END

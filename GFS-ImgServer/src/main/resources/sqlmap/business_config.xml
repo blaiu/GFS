@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BusinessConfig">
+
+    <resultMap id="BusinessConfigMap" type="BusinessConfig">
+        <result property="businessName" 	 column="business_name"/>
+         <result property="isThumbNail" 	 column="is_thumb_nail"/>
+        <result property="compression" 		 column="compression"/>
+        <result property="waterMark" 		 column="watermark"/>
+        <result property="waterMarkPic" 	 column="watermark_pic"/>
+        <result property="waterMarkPosition" column="watermark_position"/>
+        <result property="isBorder" 		 column="is_border"/>
+        <result property="imgFramSize" 		 column="img_frame_size"/>
+        <result property="imgBorderColor" 	 column="img_border_color"/>
+        
+<!-- 
+        <result property="accessOriginal" 	column="is_access_original"/>
+        <result property="accessThumb" 		column="is_access_thumb"/>
+         -->
+    </resultMap>
+
+
+    <select id="getBusinessConfig" resultMap="BusinessConfigMap" >
+        SELECT
+        	 business_name,is_thumb_nail, compression, watermark,watermark_pic,  watermark_position,
+        	 is_border, img_frame_size, img_border_color 
+       	FROM
+       		 business_config
+    </select>
+    
+</mapper>

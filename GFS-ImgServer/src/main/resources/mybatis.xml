@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="lazyLoadingEnabled" value="false"/>
+	</settings>
+	<typeAliases>
+		<typeAlias alias="Authorization" type="com.gome.cloud.img.bean.Authorization"/>
+		<typeAlias alias="FileDelRecord" type="com.gome.cloud.img.bean.FileDelRecord"/>
+		<typeAlias alias="FileNameMap" type="com.gome.cloud.img.bean.FileNameMap"/>
+		<typeAlias alias="BusinessConfig" type="com.gome.cloud.img.bean.BusinessConfig"/>
+	</typeAliases>
+    <mappers>
+        <mapper resource="sqlmap/auth.xml"/>
+        <mapper resource="sqlmap/gomefs_del_record.xml"/>
+        <mapper resource="sqlmap/file_name_map.xml"/>
+        <mapper resource="sqlmap/business_config.xml"/>
+    </mappers>
+</configuration>

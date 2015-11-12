@@ -1,0 +1,70 @@
+#
+# A simple, old format, mime.types file
+#
+text/html		html htm HTML HTM
+text/plain		txt text TXT TEXT
+image/gif		gif GIF
+image/ief		ief
+image/jpeg		jpeg jpg jpe JPG
+image/tiff		tiff tif
+image/png		png PNG
+image/x-xwindowdump	xwd
+image/bmp			bmp
+image/cgm			cgm
+image/g3fax
+image/gif			gif
+image/ief			ief
+image/jpeg			jpeg jpg jpe
+image/jp2			jp2
+image/naplps
+image/pict			pict pic pct
+image/png			png
+image/prs.btif
+image/prs.pti
+image/svg+xml			svg
+image/t38
+image/tiff			tiff tif
+image/tiff-fx
+image/vnd.cns.inf2
+image/vnd.djvu			djvu djv
+image/vnd.dwg
+image/vnd.dxf
+image/vnd.fastbidsheet
+image/vnd.fpx
+image/vnd.fst
+image/vnd.fujixerox.edmics-mmr
+image/vnd.fujixerox.edmics-rlc
+image/vnd.globalgraphics.pgb
+image/vnd.mix
+image/vnd.ms-modi
+image/vnd.net-fpx
+image/vnd.svf
+image/vnd.wap.wbmp		wbmp
+image/vnd.xiff
+image/x-cmu-raster		ras
+image/x-macpaint		pntg pnt mac
+image/x-icon			ico
+image/x-portable-anymap		pnm
+image/x-portable-bitmap		pbm
+image/x-portable-graymap	pgm
+image/x-portable-pixmap		ppm
+image/x-quicktime		qtif qti
+image/x-rgb			rgb
+image/x-xbitmap			xbm
+image/x-xpixmap			xpm
+image/x-xwindowdump		xwd
+image/webp              webp
+application/postscript	ai eps ps
+application/rtf		rtf
+application/x-tex	tex
+application/x-texinfo	texinfo texi
+application/x-troff	t tr roff
+audio/basic		au
+audio/midi		midi mid
+audio/x-aifc		aifc
+audio/x-aiff            aif aiff
+audio/x-mpeg		mpeg mpg
+audio/x-wav             wav
+video/mpeg		mpeg mpg mpe
+video/quicktime		qt mov
+video/x-msvideo		avi

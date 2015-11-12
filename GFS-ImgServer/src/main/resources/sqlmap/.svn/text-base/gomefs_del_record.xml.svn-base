@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FileDelRecord">
+
+    <resultMap id="FileDelRecordMap" type="FileDelRecord">
+   		<result property="gomeFsDelRecordId" column="gomefs_del_record_id"/>
+        <result property="businessName" column="business_name"/>
+        <result property="sourceURI" column="source_uri"/>
+        <result property="gomefsURI" column="gomefs_uri"/>
+        <result property="flag" column="flag"/>
+    </resultMap>
+
+
+    <select id="getDelRecord" parameterType="java.lang.String" resultMap="FileDelRecordMap">
+        SELECT business_name,source_uri,flag,gomefs_uri from gomefs_del_record
+        where source_uri=#{oldUrl} limit 1
+    </select>
+
+
+</mapper>
