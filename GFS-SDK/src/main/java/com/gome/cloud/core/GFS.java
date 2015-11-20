@@ -80,11 +80,35 @@ public class GFS {
 	
 	private void initConfig() {
 		Properties prop = loadConfig(defalutConfigName);
-		String zkAddr = prop.getProperty("zkAddr");
+		String zkAddr = prop.getProperty("gfs.zk.addr");
 		if (StringUtils.isEmpty(zkAddr)) {
 			throw new GFSException("zookeeper address not found");
 		}
 		configure.setServers(zkAddr);
+		initValue(prop);
+	}
+	
+	private void initValue(Properties prop) {
+		String maxActive = prop.getProperty("gfs.max.active");
+		String maxIdle = prop.getProperty("gfs.max.idle");
+		String minIdle = prop.getProperty("gfs.min.idle");
+		String socketTimeOut = prop.getProperty("gfs.socket.timeout");
+		String compression = prop.getProperty("gfs.compression");
+		if (!StringUtils.isEmpty(maxActive)) {
+			configure.setMaxActive(Integer.valueOf(maxActive.trim()));
+		}
+		if (!StringUtils.isEmpty(maxIdle)) {
+			configure.setMaxIdle(Integer.valueOf(maxIdle.trim()));
+		}
+		if (!StringUtils.isEmpty(minIdle)) {
+			configure.setMinIdle(Integer.valueOf(minIdle.trim()));
+		}
+		if (!StringUtils.isEmpty(socketTimeOut)) {
+			configure.setSocketTimeoutMs(Integer.valueOf(socketTimeOut.trim()));
+		}
+		if (!StringUtils.isEmpty(compression)) {
+			configure.setCompression(Boolean.parseBoolean(compression.trim()));
+		}
 	}
 	
 	private void init() {
